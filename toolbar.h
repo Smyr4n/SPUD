@@ -20,7 +20,23 @@ public:
 
     explicit Toolbar(QWidget *parent = nullptr);
 
+private slots:
+
+    void onItemClicked (const QModelIndex& index);
+
+public slots:
+
+
+
 signals:
+
+    void addUMLClass();
+
+    void addUMLAbstract();
+
+    void addUMLInterface();
+
+    void addUMLEnum();
 };
 
 #endif // TOOLBAR_H
