@@ -2,4 +2,6 @@
 
 Canvas::Canvas(QWidget *parent)
     : QLabel{parent}
-{}
+{
+    setAcceptDrops(true);
+}
