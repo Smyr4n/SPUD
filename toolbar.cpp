@@ -19,29 +19,25 @@ Toolbar::Toolbar(QWidget *parent)
     connect(this, &QListView::clicked, this, &Toolbar::onItemClicked);
 }
 
-void onItemClicked (const QModelIndex& index)
+void Toolbar::onItemClicked (const QModelIndex& index)
 {
     QString itemText = index.data(Qt::DisplayRole).toString();
 
-    switch (itemText)
+    if (itemText == "Class")
     {
-        case "Class":
-            emit addUMLClass();
-            break;
-
-        case "Abstract Class":
-            emit addUMLAbstract();
-            break;
-
-        case "Interface":
-            emit addUMLInterface();
-            break;
-
-        case "Enum":
-            emit addUMLEnum();
-            break;
-
-        default:
-            break;
+        emit addClass();
     }
+    else if (itemText == "Abstract Class")
+    {
+        emit addAbstractClass();
+    }
+    else if (itemText == "Interface")
+    {
+        emit addInterface();
+    }
+    else if (itemText == "Enum")
+    {
+        emit addEnum();
+    }
+
 }

@@ -30,13 +30,13 @@ public slots:
 
 signals:
 
-    void addUMLClass();
+    void addClass();
 
-    void addUMLAbstract();
+    void addAbstractClass();
 
-    void addUMLInterface();
+    void addInterface();
 
-    void addUMLEnum();
+    void addEnum();
 };
 
 #endif // TOOLBAR_H
