@@ -11,6 +11,8 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 
+#include <QTextDocument>
+
 class Canvas : public QGraphicsView
 {
     Q_OBJECT

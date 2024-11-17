@@ -77,8 +77,14 @@ QGraphicsRectItem* Canvas::makeClassTemplate(QGraphicsTextItem* templateText)
     templateText->setParentItem(templateClass);
     templateText->setPos(templateClass->rect().center() - templateText->boundingRect().center());
 
-    // Define text characteristics
     templateText->setTextInteractionFlags(Qt::TextEditorInteraction);
+
+    // Recenters the text when it is updated
+    QObject::connect(templateText->document(), &QTextDocument::contentsChanged, [templateText, templateClass]()
+    {
+        templateText->setPos(templateClass->rect().center() - templateText->boundingRect().center());
+    });
+
     templateClass->setData(0, QVariant::fromValue(templateText));
 
     return templateClass;
