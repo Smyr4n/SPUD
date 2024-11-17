@@ -60,6 +60,8 @@ private:
 
     void setItalic (QGraphicsTextItem* text);
 
+    void setDashed (QGraphicsRectItem* box);
+
 };
 
 #endif // CANVAS_H

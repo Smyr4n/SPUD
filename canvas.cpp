@@ -24,6 +24,8 @@ void Canvas::addAbstractClass()
 
     QGraphicsRectItem* umlAbstract = makeClassTemplate(abstractText);
 
+    setDashed(umlAbstract);
+
     world->addItem(umlAbstract);
 }
 
@@ -34,6 +36,8 @@ void Canvas::addInterface()
     setItalic(interfaceText);
 
     QGraphicsRectItem* umlInterface = makeClassTemplate(interfaceText);
+
+    setDashed(umlInterface);
 
     world->addItem(umlInterface);
 }
@@ -85,4 +89,11 @@ void Canvas::setItalic(QGraphicsTextItem* text)
     QFont font = text->font();
     font.setItalic(true);
     text->setFont(font);
+}
+
+void Canvas::setDashed(QGraphicsRectItem* box)
+{
+    QPen dashedPen(Qt::black);
+    dashedPen.setStyle(Qt::DashLine);
+    box->setPen(dashedPen);
 }
