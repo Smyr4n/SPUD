@@ -2,8 +2,9 @@
 #define CANVAS_H
 
 #include <QWidget>
+#include <QLabel>
 
-class Canvas : public QWidget
+class Canvas : public QLabel
 {
     Q_OBJECT
 public:
