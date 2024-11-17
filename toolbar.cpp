@@ -1,5 +1,5 @@
 #include "toolbar.h"
 
 Toolbar::Toolbar(QWidget *parent)
-    : QLabel{parent}
+    : QStackedWidget{parent}
 {}

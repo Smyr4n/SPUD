@@ -2,9 +2,9 @@
 #define TOOLBAR_H
 
 #include <QWidget>
-#include <QLabel>
+#include <QStackedWidget>
 
-class Toolbar : public QLabel
+class Toolbar : public QStackedWidget
 {
     Q_OBJECT
 public:
