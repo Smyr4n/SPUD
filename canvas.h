@@ -11,8 +11,6 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsTextItem>
 
-#include <QMouseEvent>
-
 class Canvas : public QGraphicsView
 {
     Q_OBJECT
@@ -41,6 +39,10 @@ public slots:
     /// @brief Creates a box on the canvas representing
     ///        an enum.
     void addEnum();
+
+    /// @brief Creates a box on the canvas representing
+    ///        a package.
+    void addPackage();
 
 signals:
 

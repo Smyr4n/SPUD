@@ -35,6 +35,13 @@ void Canvas::addEnum()
     world->addItem(umlEnum);
 }
 
+void Canvas::addPackage()
+{
+    QGraphicsRectItem* umlPackage = makeClassTemplate("New Package");
+
+    world->addItem(umlPackage);
+}
+
 QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
 {
     // Create a new box centered on the screen
