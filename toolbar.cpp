@@ -1,5 +1,5 @@
 #include "toolbar.h"
 
-ToolBar::ToolBar(QWidget *parent)
-    : QVBoxLayout{parent}
+Toolbar::Toolbar(QWidget *parent)
+    : QLabel{parent}
 {}

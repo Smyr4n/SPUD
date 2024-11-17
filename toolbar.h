@@ -2,13 +2,13 @@
 #define TOOLBAR_H
 
 #include <QWidget>
-#include <QVBoxLayout>
+#include <QLabel>
 
-class ToolBar : public QVBoxLayout
+class Toolbar : public QLabel
 {
     Q_OBJECT
 public:
-    explicit ToolBar(QWidget *parent = nullptr);
+    explicit Toolbar(QWidget *parent = nullptr);
 
 signals:
 };
