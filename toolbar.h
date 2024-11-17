@@ -2,8 +2,9 @@
 #define TOOLBAR_H
 
 #include <QWidget>
+#include <QVBoxLayout>
 
-class ToolBar : public QWidget
+class ToolBar : public QVBoxLayout
 {
     Q_OBJECT
 public:
