@@ -41,8 +41,11 @@
       <property name="styleSheet">
        <string notr="true">background-color: #d3d3d3; border: 2px solid black;</string>
       </property>
-      <widget class="QWidget" name="page"/>
-      <widget class="QWidget" name="page_2"/>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="objectsPage"/>
+      <widget class="QWidget" name="arrowsPage"/>
      </widget>
     </item>
     <item>
