@@ -37,8 +37,10 @@ void Canvas::addEnum()
 
 QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
 {
+    // Create a new box centered on the screen
     QGraphicsRectItem* templateClass = new QGraphicsRectItem(width()/2, height()/2, DEFAULT_BOX_WIDTH, DEFAULT_BOX_HEIGHT);
 
+    // Define box characteristics
     templateClass->setFlags
     (
         QGraphicsItem::ItemIsMovable |
@@ -46,6 +48,7 @@ QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
         QGraphicsItem::ItemSendsGeometryChanges
     );
 
+    // Create and center text
     QGraphicsTextItem* templateText = new QGraphicsTextItem(defaultText, templateClass);
     templateText->setPos(templateClass->rect().center() - templateText->boundingRect().center());
     templateText->setTextInteractionFlags(Qt::TextEditorInteraction);
