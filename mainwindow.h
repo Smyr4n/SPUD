@@ -13,15 +13,16 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-private:
-
-    Model* model;
-
 public:
+
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
+
     Ui::MainWindow *ui;
+    Model* model;
+
+    void setupConnections();
 };
 #endif // MAINWINDOW_H

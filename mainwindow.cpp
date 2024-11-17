@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Model needs to be initialized after UI
     model = new Model(ui->canvas, ui->toolbar);
+
+    setupConnections();
 }
 
 MainWindow::~MainWindow()
@@ -17,3 +19,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setupConnections()
+{
+    connect(ui->toolbar, &Toolbar::addClass, ui->canvas, &Canvas::addClass);
+}
