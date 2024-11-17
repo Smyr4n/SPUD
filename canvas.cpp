@@ -5,13 +5,23 @@ Canvas::Canvas(QWidget *parent)
     , world(new QGraphicsScene(this))
 {
     setScene(world);
-    addClass(100, 100);
+    addClass();
 }
 
-void Canvas::addClass(float xPos, float yPos)
+void Canvas::addClass()
 {
-    QGraphicsRectItem* umlClass = new QGraphicsRectItem(xPos, yPos, 50, 50);
-    umlClass->setFlag(QGraphicsItem::ItemIsMovable);
-    umlClass->setFlag(QGraphicsItem::ItemIsSelectable);
+    QGraphicsRectItem* umlClass = new QGraphicsRectItem(width()/2, height()/2, 100, 50);
+    umlClass->setFlags
+    (
+        QGraphicsItem::ItemIsMovable |
+        QGraphicsItem::ItemIsSelectable |
+        QGraphicsItem::ItemSendsGeometryChanges
+    );
+
+    QGraphicsTextItem* classText = new QGraphicsTextItem("New Class", umlClass);
+    classText->setPos(umlClass->rect().center() - classText->boundingRect().center());
+    classText->setTextInteractionFlags(Qt::TextEditorInteraction);
+
+    umlClass->setData(0, QVariant::fromValue(classText));
     world->addItem(umlClass);
 }

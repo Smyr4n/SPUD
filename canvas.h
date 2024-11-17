@@ -5,7 +5,9 @@
 
 #include <QGraphicsView>
 #include <QGraphicsScene>
+
 #include <QGraphicsRectItem>
+#include <QGraphicsTextItem>
 
 #include <QMouseEvent>
 
@@ -17,14 +19,13 @@ private:
 
     QGraphicsScene* world;
 
-
 public:
 
     explicit Canvas(QWidget *parent = nullptr);
 
 public slots:
 
-    void addClass (float xPos, float yPos);
+    void addClass ();
 
 signals:
 };
