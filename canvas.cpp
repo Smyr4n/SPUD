@@ -9,40 +9,60 @@ Canvas::Canvas(QWidget *parent)
 
 void Canvas::addClass()
 {
-    QGraphicsRectItem* umlClass = makeClassTemplate("New Class");
+    QGraphicsTextItem* classText = new QGraphicsTextItem("New Class");
+
+    QGraphicsRectItem* umlClass = makeClassTemplate(classText);
 
     world->addItem(umlClass);
 }
 
 void Canvas::addAbstractClass()
 {
-    QGraphicsRectItem* umlAbstract = makeClassTemplate("New Abstract Class");
+    QGraphicsTextItem* abstractText = new QGraphicsTextItem("New Abstract Class");
+
+    // Change font to italic
+    QFont font = abstractText->font();
+    font.setItalic(true);
+    abstractText->setFont(font);
+
+    QGraphicsRectItem* umlAbstract = makeClassTemplate(abstractText);
 
     world->addItem(umlAbstract);
 }
 
 void Canvas::addInterface()
 {
-    QGraphicsRectItem* umlInterface = makeClassTemplate("New Interface");
+    QGraphicsTextItem* interfaceText = new QGraphicsTextItem("New Interface");
+
+    // Change font to italic
+    QFont font = interfaceText->font();
+    font.setItalic(true);
+    interfaceText->setFont(font);
+
+    QGraphicsRectItem* umlInterface = makeClassTemplate(interfaceText);
 
     world->addItem(umlInterface);
 }
 
 void Canvas::addEnum()
 {
-    QGraphicsRectItem* umlEnum = makeClassTemplate("New Enum");
+    QGraphicsTextItem* enumText = new QGraphicsTextItem("New Enum");
+
+    QGraphicsRectItem* umlEnum = makeClassTemplate(enumText);
 
     world->addItem(umlEnum);
 }
 
 void Canvas::addPackage()
 {
-    QGraphicsRectItem* umlPackage = makeClassTemplate("New Package");
+    QGraphicsTextItem* packageText = new QGraphicsTextItem("New Package");
+
+    QGraphicsRectItem* umlPackage = makeClassTemplate(packageText);
 
     world->addItem(umlPackage);
 }
 
-QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
+QGraphicsRectItem* Canvas::makeClassTemplate(QGraphicsTextItem* templateText)
 {
     // Create a new box centered on the screen
     QGraphicsRectItem* templateClass = new QGraphicsRectItem(width()/2, height()/2, DEFAULT_BOX_WIDTH, DEFAULT_BOX_HEIGHT);
@@ -55,9 +75,11 @@ QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
         QGraphicsItem::ItemSendsGeometryChanges
     );
 
-    // Create and center text
-    QGraphicsTextItem* templateText = new QGraphicsTextItem(defaultText, templateClass);
+    // Center text
+    templateText->setParentItem(templateClass);
     templateText->setPos(templateClass->rect().center() - templateText->boundingRect().center());
+
+    // Define text characteristics
     templateText->setTextInteractionFlags(Qt::TextEditorInteraction);
     templateClass->setData(0, QVariant::fromValue(templateText));
 

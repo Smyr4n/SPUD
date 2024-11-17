@@ -56,7 +56,7 @@ private:
     QGraphicsScene* world;
 
     /// @brief Creates and returns a pointer to a template box on the Canvas.
-    QGraphicsRectItem* makeClassTemplate(const QString& defaultText);
+    QGraphicsRectItem* makeClassTemplate(QGraphicsTextItem* templateText);
 
 };
 
