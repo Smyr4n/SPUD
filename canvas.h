@@ -58,6 +58,8 @@ private:
     /// @brief Creates and returns a pointer to a template box on the Canvas.
     QGraphicsRectItem* makeClassTemplate(QGraphicsTextItem* templateText);
 
+    void setItalic (QGraphicsTextItem* text);
+
 };
 
 #endif // CANVAS_H

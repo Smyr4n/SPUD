@@ -20,10 +20,7 @@ void Canvas::addAbstractClass()
 {
     QGraphicsTextItem* abstractText = new QGraphicsTextItem("New Abstract Class");
 
-    // Change font to italic
-    QFont font = abstractText->font();
-    font.setItalic(true);
-    abstractText->setFont(font);
+    setItalic(abstractText);
 
     QGraphicsRectItem* umlAbstract = makeClassTemplate(abstractText);
 
@@ -34,10 +31,7 @@ void Canvas::addInterface()
 {
     QGraphicsTextItem* interfaceText = new QGraphicsTextItem("New Interface");
 
-    // Change font to italic
-    QFont font = interfaceText->font();
-    font.setItalic(true);
-    interfaceText->setFont(font);
+    setItalic(interfaceText);
 
     QGraphicsRectItem* umlInterface = makeClassTemplate(interfaceText);
 
@@ -84,4 +78,11 @@ QGraphicsRectItem* Canvas::makeClassTemplate(QGraphicsTextItem* templateText)
     templateClass->setData(0, QVariant::fromValue(templateText));
 
     return templateClass;
+}
+
+void Canvas::setItalic(QGraphicsTextItem* text)
+{
+    QFont font = text->font();
+    font.setItalic(true);
+    text->setFont(font);
 }
