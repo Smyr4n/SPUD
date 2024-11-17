@@ -25,7 +25,13 @@ public:
 
 public slots:
 
-    void addClass ();
+    void addClass();
+
+    void addAbstractClass();
+
+    void addInterface();
+
+    void addEnum();
 
 signals:
 };

@@ -5,7 +5,6 @@ Canvas::Canvas(QWidget *parent)
     , world(new QGraphicsScene(this))
 {
     setScene(world);
-    addClass();
 }
 
 void Canvas::addClass()
@@ -24,4 +23,19 @@ void Canvas::addClass()
 
     umlClass->setData(0, QVariant::fromValue(classText));
     world->addItem(umlClass);
+}
+
+void Canvas::addAbstractClass()
+{
+
+}
+
+void Canvas::addInterface()
+{
+
+}
+
+void Canvas::addEnum()
+{
+
 }
