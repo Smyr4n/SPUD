@@ -1,5 +1,5 @@
 # What is SPUD?
-![Banner.png](Resources/Icons/Banner.png?)
+![Banner.png](Resources/Icons/Banner.png)
 ---
 SPUD (Simple Project UML Designer) is an open-source Qt C++ application that allows you to design and export UML designs. 
 
