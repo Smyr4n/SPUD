@@ -2,13 +2,29 @@
 #define CANVAS_H
 
 #include <QWidget>
-#include <QLabel>
 
-class Canvas : public QLabel
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QGraphicsRectItem>
+
+#include <QMouseEvent>
+
+class Canvas : public QGraphicsView
 {
     Q_OBJECT
+
+private:
+
+    QGraphicsScene* world;
+
+
 public:
+
     explicit Canvas(QWidget *parent = nullptr);
+
+public slots:
+
+    void addClass (float xPos, float yPos);
 
 signals:
 };
