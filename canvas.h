@@ -56,10 +56,20 @@ private:
     QGraphicsScene* world;
 
     /// @brief Creates and returns a pointer to a template box on the Canvas.
+    ///
+    /// @param templateText - The text item for this box to hold.
+    ///
+    /// @returns A pointer to the created template box.
     QGraphicsRectItem* makeClassTemplate(QGraphicsTextItem* templateText);
 
+    /// @brief Makes the provided text item italic.
+    ///
+    /// @param text - The text item to modify.
     void setItalic (QGraphicsTextItem* text);
 
+    /// @brief Makes the provided box have a dashed border.
+    ///
+    /// @param box - The box item to modify.
     void setDashed (QGraphicsRectItem* box);
 
 };
