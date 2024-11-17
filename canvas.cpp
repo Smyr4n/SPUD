@@ -16,17 +16,23 @@ void Canvas::addClass()
 
 void Canvas::addAbstractClass()
 {
+    QGraphicsRectItem* umlAbstract = makeClassTemplate("New Abstract Class");
 
+    world->addItem(umlAbstract);
 }
 
 void Canvas::addInterface()
 {
+    QGraphicsRectItem* umlInterface = makeClassTemplate("New Interface");
 
+    world->addItem(umlInterface);
 }
 
 void Canvas::addEnum()
 {
+    QGraphicsRectItem* umlEnum = makeClassTemplate("New Enum");
 
+    world->addItem(umlEnum);
 }
 
 QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
