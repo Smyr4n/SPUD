@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include <QString>
+
 #include <QGraphicsView>
 #include <QGraphicsScene>
 
@@ -14,10 +16,6 @@
 class Canvas : public QGraphicsView
 {
     Q_OBJECT
-
-private:
-
-    QGraphicsScene* world;
 
 public:
 
@@ -34,6 +32,16 @@ public slots:
     void addEnum();
 
 signals:
+
+private:
+
+    const int DEFAULT_BOX_WIDTH = 150;
+    const int DEFAULT_BOX_HEIGHT = 50;
+
+    QGraphicsScene* world;
+
+    QGraphicsRectItem* makeClassTemplate(const QString& defaultText);
+
 };
 
 #endif // CANVAS_H

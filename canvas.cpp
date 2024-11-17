@@ -9,19 +9,8 @@ Canvas::Canvas(QWidget *parent)
 
 void Canvas::addClass()
 {
-    QGraphicsRectItem* umlClass = new QGraphicsRectItem(width()/2, height()/2, 100, 50);
-    umlClass->setFlags
-    (
-        QGraphicsItem::ItemIsMovable |
-        QGraphicsItem::ItemIsSelectable |
-        QGraphicsItem::ItemSendsGeometryChanges
-    );
+    QGraphicsRectItem* umlClass = makeClassTemplate("New Class");
 
-    QGraphicsTextItem* classText = new QGraphicsTextItem("New Class", umlClass);
-    classText->setPos(umlClass->rect().center() - classText->boundingRect().center());
-    classText->setTextInteractionFlags(Qt::TextEditorInteraction);
-
-    umlClass->setData(0, QVariant::fromValue(classText));
     world->addItem(umlClass);
 }
 
@@ -38,4 +27,23 @@ void Canvas::addInterface()
 void Canvas::addEnum()
 {
 
+}
+
+QGraphicsRectItem* Canvas::makeClassTemplate(const QString& defaultText)
+{
+    QGraphicsRectItem* templateClass = new QGraphicsRectItem(width()/2, height()/2, DEFAULT_BOX_WIDTH, DEFAULT_BOX_HEIGHT);
+
+    templateClass->setFlags
+    (
+        QGraphicsItem::ItemIsMovable |
+        QGraphicsItem::ItemIsSelectable |
+        QGraphicsItem::ItemSendsGeometryChanges
+    );
+
+    QGraphicsTextItem* templateText = new QGraphicsTextItem(defaultText, templateClass);
+    templateText->setPos(templateClass->rect().center() - templateText->boundingRect().center());
+    templateText->setTextInteractionFlags(Qt::TextEditorInteraction);
+    templateClass->setData(0, QVariant::fromValue(templateText));
+
+    return templateClass;
 }
