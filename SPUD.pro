@@ -12,11 +12,13 @@ SOURCES += \
     canvas.cpp \
     main.cpp \
     mainwindow.cpp \
+    model.cpp \
     toolbar.cpp
 
 HEADERS += \
     canvas.h \
     mainwindow.h \
+    model.h \
     toolbar.h
 
 FORMS += \
