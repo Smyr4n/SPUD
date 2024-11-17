@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "model.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -10,6 +12,10 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+private:
+
+    Model* model;
 
 public:
     MainWindow(QWidget *parent = nullptr);

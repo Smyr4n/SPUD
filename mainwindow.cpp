@@ -6,10 +6,14 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    // Model needs to be initialized after UI
+    model = new Model(ui->canvas, ui->toolbar);
 }
 
 MainWindow::~MainWindow()
 {
+    delete model;
     delete ui;
 }
 
